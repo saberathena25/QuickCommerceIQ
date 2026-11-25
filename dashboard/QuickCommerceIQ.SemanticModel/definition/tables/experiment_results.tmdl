@@ -1,0 +1,143 @@
+table experiment_results
+	lineageTag: 9e34431d-6747-5b8b-a9c5-7628223c0c7d
+
+	column metric
+		dataType: string
+		lineageTag: 3c37e7cf-3437-59ff-91f4-ef445cadc703
+		summarizeBy: none
+		sourceColumn: metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: 05396d8d-d92a-56a2-af4f-cea333a43fad
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column control_value
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 1592696d-ae1a-5e3a-9b19-61ba1b1b645b
+		summarizeBy: sum
+		sourceColumn: control_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column treatment_value
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: c3cb8bdd-1fa7-57e8-a036-dce2ca789718
+		summarizeBy: sum
+		sourceColumn: treatment_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column absolute_diff
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: ff8ff6f9-5c7d-58d0-b770-bef1f6203136
+		summarizeBy: sum
+		sourceColumn: absolute_diff
+
+		annotation SummarizationSetBy = Automatic
+
+	column relative_lift_pct
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e80f47d2-f349-5ea2-80d9-fc5a76652ceb
+		summarizeBy: sum
+		sourceColumn: relative_lift_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column test_used
+		dataType: string
+		lineageTag: c9790d9e-66f5-54b5-ba1c-488567033658
+		summarizeBy: none
+		sourceColumn: test_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column statistic
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 63efa300-8e84-5911-8b62-7023038179ae
+		summarizeBy: sum
+		sourceColumn: statistic
+
+		annotation SummarizationSetBy = Automatic
+
+	column p_value
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 194fc2a9-23dd-5787-9322-6de9ea156928
+		summarizeBy: sum
+		sourceColumn: p_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column mann_whitney_p
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: ff1e0cef-6ee0-5404-9474-a09a3b61e942
+		summarizeBy: sum
+		sourceColumn: mann_whitney_p
+
+		annotation SummarizationSetBy = Automatic
+
+	column ci_95_low
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 81226069-c6be-5239-88cb-460cf1eda287
+		summarizeBy: sum
+		sourceColumn: ci_95_low
+
+		annotation SummarizationSetBy = Automatic
+
+	column ci_95_high
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 19ed1538-64bf-5245-a26e-d8eb68b23031
+		summarizeBy: sum
+		sourceColumn: ci_95_high
+
+		annotation SummarizationSetBy = Automatic
+
+	column bootstrap_95_low
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 0378befb-aa44-505f-9530-58b88f4224cd
+		summarizeBy: sum
+		sourceColumn: bootstrap_95_low
+
+		annotation SummarizationSetBy = Automatic
+
+	column bootstrap_95_high
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: b95a311a-5ae3-5079-ba48-17aa3c0a5291
+		summarizeBy: sum
+		sourceColumn: bootstrap_95_high
+
+		annotation SummarizationSetBy = Automatic
+
+	column significant_at_5pct
+		dataType: boolean
+		lineageTag: e21c7244-dac6-5558-9045-9f2a9c4dd651
+		summarizeBy: none
+		sourceColumn: significant_at_5pct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition experiment_results = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\reports\\experiment_results.csv"), [Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"metric", type text}, {"role", type text}, {"control_value", type number}, {"treatment_value", type number}, {"absolute_diff", type number}, {"relative_lift_pct", type number}, {"test_used", type text}, {"statistic", type number}, {"p_value", type number}, {"mann_whitney_p", type number}, {"ci_95_low", type number}, {"ci_95_high", type number}, {"bootstrap_95_low", type number}, {"bootstrap_95_high", type number}, {"significant_at_5pct", type logical}})
+			in
+				#"Changed Type"

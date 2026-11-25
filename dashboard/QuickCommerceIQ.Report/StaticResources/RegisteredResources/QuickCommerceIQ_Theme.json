@@ -1,0 +1,59 @@
+{
+  "name": "QuickCommerceIQ Enterprise",
+  "dataColors": [
+    "#1B2A4A",
+    "#0F766E",
+    "#1D4ED8",
+    "#D97706",
+    "#991B1B",
+    "#166534",
+    "#475569",
+    "#0284C7"
+  ],
+  "background": "#F8FAFC",
+  "foreground": "#1F2937",
+  "tableAccent": "#1B2A4A",
+  "good": "#166534",
+  "neutral": "#D97706",
+  "bad": "#991B1B",
+  "maximum": "#166534",
+  "center": "#FDE68A",
+  "minimum": "#991B1B",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#E2E8F0" } },
+            "radius": 6
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#1B2A4A" } },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#F8FAFC" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

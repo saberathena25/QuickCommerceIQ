@@ -1,0 +1,56 @@
+{
+  "batch_id": "BATCH-20261125T004528Z-898e71",
+  "generated_at_utc": "2026-11-25T00:45:43.371449+00:00",
+  "quality_gate_passed": true,
+  "gates": {
+    "order_reconciliation_exact": true,
+    "item_reconciliation_exact": true,
+    "inventory_reconciliation_exact": true,
+    "zero_pk_duplicates": true,
+    "referential_integrity_clean": true,
+    "cancelled_orders_preserved": true,
+    "rejection_rate_within_threshold": true
+  },
+  "metrics": {
+    "orders": {
+      "raw_count": 179887,
+      "duplicates_dropped": 3526,
+      "rejected_validation": 2073,
+      "accepted_count": 174288,
+      "rejection_and_dup_pct": 3.11,
+      "cancelled_orders_accepted": 6803
+    },
+    "order_items": {
+      "raw_count": 468730,
+      "duplicates_dropped": 0,
+      "rejected_validation": 8272,
+      "accepted_count": 460458
+    },
+    "inventory_snapshots": {
+      "raw_count": 1177600,
+      "duplicates_dropped": 0,
+      "rejected_validation": 9420,
+      "accepted_count": 1168180
+    },
+    "accepted_stores": 25
+  },
+  "quarantine_breakdown": {
+    "dark_stores": {
+      "INVALID_INDIAN_PINCODE": 1
+    },
+    "inventory_snapshots": {
+      "NEGATIVE_INVENTORY_GLITCH": 9420
+    },
+    "order_items": {
+      "INVALID_SKU_REFERENCE": 1398,
+      "NEGATIVE_OR_INVALID_PRICE_COST_QTY": 1406,
+      "ORPHAN_ORDER_REFERENCE": 5468
+    },
+    "orders": {
+      "DELIVERED_MISSING_RIDER_ID": 692,
+      "DUPLICATE_WEBHOOK_OR_NOTIFICATION": 3526,
+      "INVALID_LIFECYCLE_SEQUENCE": 865,
+      "NEGATIVE_OR_INVALID_CART_VALUE": 516
+    }
+  }
+}

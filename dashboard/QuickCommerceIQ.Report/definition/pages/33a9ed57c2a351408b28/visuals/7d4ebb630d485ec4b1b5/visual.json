@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "7d4ebb630d485ec4b1b5",
+  "position": {
+    "x": 270,
+    "y": 98,
+    "z": 6,
+    "width": 236,
+    "height": 95,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "NCM per Order (INR)"
+                }
+              },
+              "queryRef": "fact_orders.NCM per Order (INR)",
+              "nativeQueryRef": "NCM per Order (INR)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NCM per Order (INR)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

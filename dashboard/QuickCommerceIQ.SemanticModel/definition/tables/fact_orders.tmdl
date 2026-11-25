@@ -1,0 +1,348 @@
+table fact_orders
+	lineageTag: f854bfe9-71f4-57b1-a74b-8948766d9c84
+
+	measure 'Total Orders' = COUNTROWS(fact_orders)
+		formatString: #,##0
+		lineageTag: 2e0b9519-d2a1-5d80-b030-340841b068ec
+
+	measure 'Delivered Orders' = CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] = "DELIVERED")
+		formatString: #,##0
+		lineageTag: 6d5253ad-76db-58e4-8bf0-6368f1f21355
+
+	measure 'Total GMV (INR)' = SUM(fact_orders[cart_value])
+		formatString: "₹"#,##,##0
+		lineageTag: fb6eb3f0-5f0a-57f3-9ce9-d9f89a26b945
+
+	measure 'Total NCM (INR)' = SUM(fact_orders[net_contribution_margin])
+		formatString: "₹"#,##,##0.00
+		lineageTag: 09a1da09-9647-5979-acfb-582df08937eb
+
+	measure 'NCM per Order (INR)' = DIVIDE([Total NCM (INR)], [Total Orders], 0)
+		formatString: "₹"#,##0.00
+		lineageTag: d2726bfa-b5ef-5417-a55a-f9504f22d02a
+
+	measure 'Average Delivery Time (Min)' = CALCULATE(AVERAGE(fact_orders[total_delivery_minutes]), fact_orders[order_status] = "DELIVERED")
+		formatString: 0.00
+		lineageTag: 9b4b244f-9d22-5f17-b136-980a434ffc32
+
+	measure 'Avg Picking Time (Min)' = CALCULATE(AVERAGE(fact_orders[picking_minutes]), fact_orders[order_status] = "DELIVERED")
+		formatString: 0.00
+		lineageTag: 5ad343ce-59fd-5e6a-9dc2-bd4632618578
+
+	measure 'Avg Rider Assignment Time (Min)' = CALCULATE(AVERAGE(fact_orders[assignment_minutes]), fact_orders[order_status] = "DELIVERED")
+		formatString: 0.00
+		lineageTag: 201e0ac1-b308-5990-9379-04792304beed
+
+	measure 'Avg Transit Time (Min)' = CALCULATE(AVERAGE(fact_orders[transit_minutes]), fact_orders[order_status] = "DELIVERED")
+		formatString: 0.00
+		lineageTag: eadbf12b-a75d-5c82-be1c-6dafcd4d9452
+
+	measure 'SLA Breach Count' = CALCULATE(COUNTROWS(fact_orders), fact_orders[order_status] = "DELIVERED", fact_orders[is_sla_breach] = TRUE())
+		formatString: #,##0
+		lineageTag: c9281f75-2b90-5849-8179-f1182788272f
+
+	measure 'SLA Breach Rate %' = DIVIDE([SLA Breach Count], [Delivered Orders], 0)
+		formatString: 0.00%
+		lineageTag: 1a68840e-44bc-5c1c-a63c-2a1163b07cff
+
+	column order_id
+		dataType: string
+		lineageTag: c6f7129a-b01f-5f67-919d-ce56a4bfec93
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 99bb5d82-9e2d-5ac4-9d43-9c6b59993cc9
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_id
+		dataType: string
+		lineageTag: 106a6333-f899-59e5-beac-5b6d626fc023
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column rider_id
+		dataType: string
+		lineageTag: 8567e90e-5795-51e6-8a74-c4d31a528eda
+		summarizeBy: none
+		sourceColumn: rider_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column placed_at
+		dataType: string
+		lineageTag: 22d0e059-483f-53d2-900e-8b1050bb5d7d
+		summarizeBy: none
+		sourceColumn: placed_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column packed_at
+		dataType: string
+		lineageTag: 45aca1e2-4fe2-5827-abde-e86cd38d301e
+		summarizeBy: none
+		sourceColumn: packed_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column dispatched_at
+		dataType: string
+		lineageTag: ac66673c-cb8e-52f8-9782-6f1a64597437
+		summarizeBy: none
+		sourceColumn: dispatched_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_at
+		dataType: string
+		lineageTag: 86357202-b533-5338-8583-2ed219dd8fab
+		summarizeBy: none
+		sourceColumn: delivered_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column cancelled_at
+		dataType: string
+		lineageTag: a6c199d8-9b36-5c1f-baf2-c33aa4e3fb3f
+		summarizeBy: none
+		sourceColumn: cancelled_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: 6d726b41-0068-5ad8-8f56-f5a55f04e52a
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_mode
+		dataType: string
+		lineageTag: 7c89e887-0f85-599f-95cd-6a312550d139
+		summarizeBy: none
+		sourceColumn: payment_mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column cart_value
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 1d5c9735-ded6-50d5-9cff-83d48032d1dc
+		summarizeBy: sum
+		sourceColumn: cart_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column discounts
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d4cef5f5-61ac-50ac-86b7-6710a4d8eb21
+		summarizeBy: sum
+		sourceColumn: discounts
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_fee
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 8bd50763-b1f8-59a3-9038-8209cb97212d
+		summarizeBy: sum
+		sourceColumn: delivery_fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column handling_fee
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: c62d7c60-0884-5afd-9a3a-a89ef75aebde
+		summarizeBy: sum
+		sourceColumn: handling_fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column surge_fee
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 5624c049-9809-5391-aa71-4ed9dc22b9fe
+		summarizeBy: sum
+		sourceColumn: surge_fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column gross_margin
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: cf73e086-60b5-58b4-b93f-b9cbe08b091e
+		summarizeBy: sum
+		sourceColumn: gross_margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column rider_payout
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: feb5f9c3-b3f3-5161-987a-9f0623a9d135
+		summarizeBy: sum
+		sourceColumn: rider_payout
+
+		annotation SummarizationSetBy = Automatic
+
+	column packaging_cost
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e490db5a-acfc-51c7-883e-f342765f5d64
+		summarizeBy: sum
+		sourceColumn: packaging_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund_cost
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d4f978dc-1a16-5269-bc50-f874b82c36e9
+		summarizeBy: sum
+		sourceColumn: refund_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column weather_tag
+		dataType: string
+		lineageTag: 980c5770-ba64-515b-9329-39837486191d
+		summarizeBy: none
+		sourceColumn: weather_tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_contribution_margin
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 7f5abede-abde-52b6-8dc8-634e785d25ab
+		summarizeBy: sum
+		sourceColumn: net_contribution_margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column picking_seconds
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 7a270039-4b04-537e-bc22-6809ebf663a1
+		summarizeBy: sum
+		sourceColumn: picking_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignment_seconds
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 43fe4596-90f8-5f4d-ab1e-fc4ea69d347d
+		summarizeBy: sum
+		sourceColumn: assignment_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column transit_seconds
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 304bf686-94d6-5424-a09a-1aed10eaa40f
+		summarizeBy: sum
+		sourceColumn: transit_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_delivery_seconds
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d5a3eff9-4fc3-5e87-90af-4732c2bf08c3
+		summarizeBy: sum
+		sourceColumn: total_delivery_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_sla_breach
+		dataType: boolean
+		lineageTag: cc1537e7-d5c9-5cd2-b405-ea14e075c1d3
+		summarizeBy: none
+		sourceColumn: is_sla_breach
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_time_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ab8de3e-981d-50b3-a2a1-95b5abcfb5df
+		summarizeBy: none
+		sourceColumn: date_time_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date_ist
+		dataType: string
+		lineageTag: d58f4f00-c614-5e72-85fb-e6e556cf704c
+		summarizeBy: none
+		sourceColumn: order_date_ist
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour_ist
+		dataType: int64
+		formatString: 0
+		lineageTag: 606b315a-7f22-5781-8273-22a503d36cca
+		summarizeBy: none
+		sourceColumn: hour_ist
+
+		annotation SummarizationSetBy = Automatic
+
+	column picking_minutes
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 6dc6064e-439b-5940-af25-b335d4a8341c
+		summarizeBy: sum
+		sourceColumn: picking_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignment_minutes
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 739ee0da-881f-56b0-aed1-546889dd7af0
+		summarizeBy: sum
+		sourceColumn: assignment_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column transit_minutes
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 6290af1a-3172-553d-b9cc-1d0612a920cf
+		summarizeBy: sum
+		sourceColumn: transit_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_delivery_minutes
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 6e40aab0-4759-5448-bada-665ff993f1a6
+		summarizeBy: sum
+		sourceColumn: total_delivery_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_orders = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\fact_orders_pbi.csv"), [Delimiter=",", Columns=34, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"order_id", type text}, {"customer_id", type text}, {"store_id", type text}, {"rider_id", type text}, {"placed_at", type text}, {"packed_at", type text}, {"dispatched_at", type text}, {"delivered_at", type text}, {"cancelled_at", type text}, {"order_status", type text}, {"payment_mode", type text}, {"cart_value", type number}, {"discounts", type number}, {"delivery_fee", type number}, {"handling_fee", type number}, {"surge_fee", type number}, {"gross_margin", type number}, {"rider_payout", type number}, {"packaging_cost", type number}, {"refund_cost", type number}, {"weather_tag", type text}, {"net_contribution_margin", type number}, {"picking_seconds", type number}, {"assignment_seconds", type number}, {"transit_seconds", type number}, {"total_delivery_seconds", type number}, {"is_sla_breach", type logical}, {"date_time_sk", Int64.Type}, {"order_date_ist", type text}, {"hour_ist", Int64.Type}, {"picking_minutes", type number}, {"assignment_minutes", type number}, {"transit_minutes", type number}, {"total_delivery_minutes", type number}})
+			in
+				#"Changed Type"

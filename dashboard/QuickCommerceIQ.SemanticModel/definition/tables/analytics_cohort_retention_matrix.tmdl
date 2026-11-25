@@ -1,0 +1,68 @@
+table analytics_cohort_retention_matrix
+	lineageTag: 70ef2fd5-019b-501b-b75b-56af929097e0
+
+	measure 'Cohort Retention %' = DIVIDE(SUM(analytics_cohort_retention_matrix[active_customers]), SUM(analytics_cohort_retention_matrix[cohort_size]), 0)
+		formatString: 0.0%
+		lineageTag: 44e6ba73-f1aa-54d0-9a44-43a78d5403a1
+
+	column sla_segment
+		dataType: string
+		lineageTag: 3f2299b6-97e9-5f71-ba45-c81b9f378075
+		summarizeBy: none
+		sourceColumn: sla_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_month
+		dataType: string
+		lineageTag: f4502d4e-664a-5daf-bb64-2dd80bdc5d29
+		summarizeBy: none
+		sourceColumn: cohort_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a36263a-f0d6-55e2-9b38-dfac66074ce7
+		summarizeBy: none
+		sourceColumn: month_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_customers
+		dataType: int64
+		formatString: 0
+		lineageTag: 67b2382a-5bd9-549c-83b0-75bada546ac0
+		summarizeBy: sum
+		sourceColumn: active_customers
+
+		annotation SummarizationSetBy = Automatic
+
+	column cohort_size
+		dataType: int64
+		formatString: 0
+		lineageTag: 580d377f-8d75-5c99-b909-0ade348fbd6c
+		summarizeBy: sum
+		sourceColumn: cohort_size
+
+		annotation SummarizationSetBy = Automatic
+
+	column retention_pct
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d60347b6-8df2-5c71-98e7-16998b922c3b
+		summarizeBy: sum
+		sourceColumn: retention_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_cohort_retention_matrix = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_cohort_retention_matrix.csv"), [Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"sla_segment", type text}, {"cohort_month", type text}, {"month_number", Int64.Type}, {"active_customers", Int64.Type}, {"cohort_size", Int64.Type}, {"retention_pct", type number}})
+			in
+				#"Changed Type"

@@ -1,0 +1,19 @@
+relationship 288f5793-035d-56bc-b9fc-eaf6f8f59e67
+	fromColumn: fact_orders.store_id
+	toColumn: dim_dark_stores.store_id
+
+relationship 2530b4a0-6267-5700-be66-68ec4d05e466
+	fromColumn: fact_orders.customer_id
+	toColumn: dim_customers.customer_id
+
+relationship dc7126d3-3d72-5106-ba45-47c88c7e3572
+	fromColumn: fact_orders.date_time_sk
+	toColumn: dim_date_time.date_time_sk
+
+relationship 43391c3e-0cd4-5f88-9497-e1fb49ca479d
+	fromColumn: analytics_store_ranking_root_cause.store_id
+	toColumn: dim_dark_stores.store_id
+
+relationship 3fb5689a-d25e-555e-8cb0-28286efd3fd4
+	fromColumn: analytics_stockout_store_sku_hour.store_id
+	toColumn: dim_dark_stores.store_id

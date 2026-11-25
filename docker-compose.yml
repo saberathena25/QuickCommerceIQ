@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: quickcommerce_iq_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-quickcommerce_iq}
+      POSTGRES_USER: ${POSTGRES_USER:-qc_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_local_password}
+      TZ: Asia/Kolkata
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./sql/ddl:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-qc_admin} -d ${POSTGRES_DB:-quickcommerce_iq}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pg_data:

@@ -1,0 +1,128 @@
+table dim_dark_stores
+	lineageTag: 1f642419-cb5e-5a8c-9e38-2f399b3cf012
+
+	column store_id
+		dataType: string
+		lineageTag: ff962fcf-1d96-582f-92a9-c10908c7366a
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_name
+		dataType: string
+		lineageTag: fbc3b1a3-2e74-5022-ba11-b3720ad37b96
+		summarizeBy: none
+		sourceColumn: store_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: c6a9b6dd-f48e-5c06-8d3d-dc277f6a5b2f
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: fd5557d4-b8dd-54be-a9a1-7b111740da40
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column pincode
+		dataType: string
+		lineageTag: a3a9a2fc-339b-5abc-8c9d-ca8503e831bb
+		summarizeBy: none
+		sourceColumn: pincode
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone
+		dataType: string
+		lineageTag: b57afe16-eccd-51f8-aa0c-3ddd11c997d4
+		summarizeBy: none
+		sourceColumn: zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column rent_tier
+		dataType: string
+		lineageTag: 71da0b16-7dab-550e-ade3-b07a746d30a0
+		summarizeBy: none
+		sourceColumn: rent_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthly_rent
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: bd031310-0f31-5b1a-9581-47ca863aac24
+		summarizeBy: sum
+		sourceColumn: monthly_rent
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_capacity
+		dataType: int64
+		formatString: 0
+		lineageTag: 0886fdc9-246a-53f0-b41a-ecb1ec097266
+		summarizeBy: sum
+		sourceColumn: operating_capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column staffing_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 40e91a93-e65f-5c51-b4d5-f64d3219deb1
+		summarizeBy: sum
+		sourceColumn: staffing_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column operational_profile
+		dataType: string
+		lineageTag: 5c81f0af-d8d7-5c8e-aedf-18e0cee8f3a7
+		summarizeBy: none
+		sourceColumn: operational_profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_from
+		dataType: string
+		lineageTag: 470aad34-1223-58b0-a56c-e3204845aea0
+		summarizeBy: none
+		sourceColumn: effective_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_to
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 243379eb-a395-50d2-b2e2-82a6c70838ac
+		summarizeBy: sum
+		sourceColumn: effective_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		lineageTag: a2f79755-15ad-549b-b469-03a03b87a84c
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_dark_stores = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\dim_dark_stores_clean.csv"), [Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"store_id", type text}, {"store_name", type text}, {"city", type text}, {"state", type text}, {"pincode", type text}, {"zone", type text}, {"rent_tier", type text}, {"monthly_rent", type number}, {"operating_capacity", Int64.Type}, {"staffing_level", Int64.Type}, {"operational_profile", type text}, {"effective_from", type text}, {"effective_to", type number}, {"is_current", type logical}})
+			in
+				#"Changed Type"

@@ -1,0 +1,29 @@
+table analytics_unit_economics_waterfall
+	lineageTag: fdb78dce-581e-52ec-98c5-5a293134779f
+
+	column component
+		dataType: string
+		lineageTag: 4693a0b3-5f21-5e91-ac39-6f7486dc2858
+		summarizeBy: none
+		sourceColumn: component
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_inr_per_order
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 90330c58-a0f0-57c0-b7af-ec913831b0fe
+		summarizeBy: sum
+		sourceColumn: avg_inr_per_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_unit_economics_waterfall = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_unit_economics_waterfall.csv"), [Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"component", type text}, {"avg_inr_per_order", type number}})
+			in
+				#"Changed Type"

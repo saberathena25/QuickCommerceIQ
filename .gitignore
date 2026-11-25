@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Environment & Secrets
+.env
+
+# Large generated datasets & local database files (reproducible via run_pipeline.py)
+data/raw/*.csv
+data/staging/*.csv
+data/processed/*.csv
+data/processed/*.db
+data/processed/*.parquet
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

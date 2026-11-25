@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "589361e5db1e504586c5",
+  "position": {
+    "x": 645,
+    "y": 205,
+    "z": 11,
+    "width": 615,
+    "height": 245,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_unit_economics_waterfall"
+                    }
+                  },
+                  "Property": "component"
+                }
+              },
+              "queryRef": "analytics_unit_economics_waterfall.component",
+              "nativeQueryRef": "component"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_unit_economics_waterfall"
+                    }
+                  },
+                  "Property": "avg_inr_per_order"
+                }
+              },
+              "queryRef": "analytics_unit_economics_waterfall.avg_inr_per_order",
+              "nativeQueryRef": "avg_inr_per_order"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Unit Economics Bridge (Avg INR per Order)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

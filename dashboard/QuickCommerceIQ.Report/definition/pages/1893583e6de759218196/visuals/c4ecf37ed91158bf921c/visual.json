@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "c4ecf37ed91158bf921c",
+  "position": {
+    "x": 20,
+    "y": 355,
+    "z": 3,
+    "width": 480,
+    "height": 345,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "weather_tag"
+                }
+              },
+              "queryRef": "fact_orders.weather_tag",
+              "nativeQueryRef": "weather_tag"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "SLA Breach Rate %"
+                }
+              },
+              "queryRef": "fact_orders.SLA Breach Rate %",
+              "nativeQueryRef": "SLA Breach Rate %"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Normal vs Monsoon vs Heavy Rain SLA Breach %'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

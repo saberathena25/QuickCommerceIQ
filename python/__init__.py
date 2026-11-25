@@ -1,0 +1,1 @@
+"""QuickCommerceIQ package."""

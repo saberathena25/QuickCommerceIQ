@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "f1f65df0aacf5acc9187",
+  "position": {
+    "x": 20,
+    "y": 205,
+    "z": 10,
+    "width": 610,
+    "height": 245,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_date_time"
+                    }
+                  },
+                  "Property": "year_month"
+                }
+              },
+              "queryRef": "dim_date_time.year_month",
+              "nativeQueryRef": "year_month"
+            }
+          ]
+        },
+        "ColumnY": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "Total Orders"
+                }
+              },
+              "queryRef": "fact_orders.Total Orders",
+              "nativeQueryRef": "Total Orders"
+            }
+          ]
+        },
+        "LineY": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "NCM per Order (INR)"
+                }
+              },
+              "queryRef": "fact_orders.NCM per Order (INR)",
+              "nativeQueryRef": "NCM per Order (INR)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monthly Orders vs NCM per Order (INR)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

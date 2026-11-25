@@ -1,0 +1,84 @@
+{
+  "unit_economics": {
+    "total_orders": 174288,
+    "delivered_orders": 167485,
+    "total_gmv_inr": 46493962.99,
+    "total_ncm_inr": 1118302.84,
+    "avg_ncm_per_order_inr": 6.42,
+    "may_avg_ncm_inr": 19.48,
+    "oct_avg_ncm_inr": -3.27,
+    "bleeding_stores_count_order_level": 4,
+    "bleeding_stores_count_after_rent": 25
+  },
+  "sla": {
+    "avg_delivery_min": 12.47,
+    "p50_delivery_min": 12.0,
+    "p90_delivery_min": 18.25,
+    "p95_delivery_min": 20.27,
+    "overall_sla_breach_pct": 49.86,
+    "avg_picking_min": 3.28,
+    "avg_assignment_min": 2.81,
+    "avg_transit_min": 6.38,
+    "peak_hour_worst_breach_hour": 21,
+    "peak_hour_worst_breach_pct": 75.16,
+    "normal_weather_breach_pct": 36.42,
+    "heavy_rain_breach_pct": 98.46
+  },
+  "cohort_retention": {
+    "month1_fast_retention_pct": 51.83,
+    "month1_slow_retention_pct": 50.18
+  },
+  "stockout_lost_gmv": {
+    "total_peak_stockout_hours": 17469.5,
+    "estimated_lost_units": 813.06,
+    "estimated_lost_gmv_inr": 64450.87,
+    "estimated_lost_margin_inr": 15545.82
+  },
+  "bottom_5_stores": [
+    {
+      "store_id": "STR-005",
+      "store_name": "Whitefield Hub (Bengaluru)",
+      "city": "Bengaluru",
+      "avg_ncm_per_order_inr": -6.893920107318527,
+      "sla_breach_pct": 42.61,
+      "primary_bottleneck": "TRANSIT",
+      "root_cause_tags": "HIGH_DISCOUNT_BURN"
+    },
+    {
+      "store_id": "STR-016",
+      "store_name": "Saket Hub (Delhi NCR)",
+      "city": "Delhi NCR",
+      "avg_ncm_per_order_inr": -6.663783979178716,
+      "sla_breach_pct": 38.62,
+      "primary_bottleneck": "TRANSIT",
+      "root_cause_tags": "HIGH_DISCOUNT_BURN"
+    },
+    {
+      "store_id": "STR-003",
+      "store_name": "JP Nagar Hub (Bengaluru)",
+      "city": "Bengaluru",
+      "avg_ncm_per_order_inr": -2.362240693378801,
+      "sla_breach_pct": 42.33,
+      "primary_bottleneck": "TRANSIT",
+      "root_cause_tags": "HIGH_RIDER_COST"
+    },
+    {
+      "store_id": "STR-013",
+      "store_name": "Powai Hub (Mumbai)",
+      "city": "Mumbai",
+      "avg_ncm_per_order_inr": -1.7070256776034236,
+      "sla_breach_pct": 43.71,
+      "primary_bottleneck": "TRANSIT",
+      "root_cause_tags": "HIGH_RIDER_COST"
+    },
+    {
+      "store_id": "STR-009",
+      "store_name": "Andheri West Hub (Mumbai)",
+      "city": "Mumbai",
+      "avg_ncm_per_order_inr": 0.3372825250192455,
+      "sla_breach_pct": 74.67,
+      "primary_bottleneck": "RIDER_ASSIGNMENT",
+      "root_cause_tags": "HIGH_RIDER_COST, RIDER_SHORTAGE, HIGH_REFUND_COST"
+    }
+  ]
+}

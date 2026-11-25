@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "6e037a8884e652f6a8bc",
+  "position": {
+    "x": 515,
+    "y": 355,
+    "z": 4,
+    "width": 745,
+    "height": 345,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "store_name"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.store_name",
+              "nativeQueryRef": "store_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "sku_name"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.sku_name",
+              "nativeQueryRef": "sku_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "hour_ist"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.hour_ist",
+              "nativeQueryRef": "hour_ist"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "stockout_hours"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.stockout_hours",
+              "nativeQueryRef": "stockout_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "estimated_lost_units"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.estimated_lost_units",
+              "nativeQueryRef": "estimated_lost_units"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "estimated_lost_gmv_inr"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.estimated_lost_gmv_inr",
+              "nativeQueryRef": "estimated_lost_gmv_inr"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "estimated_lost_margin_inr"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.estimated_lost_margin_inr",
+              "nativeQueryRef": "estimated_lost_margin_inr"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Peak-Hour (7\u201310 PM) Stockout Lost GMV by Store & SKU'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

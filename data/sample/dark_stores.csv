@@ -1,0 +1,27 @@
+store_id,store_name,city,state,pincode,zone,rent_tier,monthly_rent,operating_capacity,staffing_level,operational_profile,effective_from,effective_to,is_current
+STR-001,Koramangala Hub (Bengaluru),Bangalore,Karnataka,560034,South Bengaluru,PREMIUM,430000.0,74,18,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-002,HSR Layout Hub (Bengaluru),Bengaluru,Karnataka,560038,South Bengaluru,PREMIUM,435000.0,46,8,PICKING_BOTTLENECK,2026-05-01T00:00:00+05:30,,True
+STR-003,JP Nagar Hub (Bengaluru),Bengaluru,Karnataka,560076,South Bengaluru,PREMIUM,441000.0,77,21,HIGH_RIDER_COST,2026-05-01T00:00:00+05:30,,True
+STR-004,Indiranagar Hub (Bengaluru),Bengaluru,Karnataka,560037,East Bengaluru,STANDARD,326000.0,70,15,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-005,Whitefield Hub (Bengaluru),Bengaluru,Karnataka,560066,East Bengaluru,STANDARD,311000.0,70,17,HIGH_DISCOUNT_BURN,2026-05-01T00:00:00+05:30,,True
+STR-006,Marathahalli Hub (Bengaluru),Bengaluru,Karnataka,560048,East Bengaluru,STANDARD,332000.0,78,20,STOCKOUT_LOSS,2026-05-01T00:00:00+05:30,,True
+STR-007,Hebbal Hub (Bengaluru),Bengaluru,Karnataka,560024,North Bengaluru,STANDARD,274000.0,71,18,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-008,Bandra West Hub (Mumbai),Bombay,Maharashtra,400050,Western Suburbs,PREMIUM,525000.0,57,19,TRANSIT_DELAY,2026-05-01T00:00:00+05:30,,True
+STR-009,Andheri West Hub (Mumbai),Mumbai,Maharashtra,400053,Western Suburbs,PREMIUM,512000.0,80,22,RIDER_SHORTAGE,2026-05-01T00:00:00+05:30,,True
+STR-010,Malad Hub (Mumbai),Mumbai,Maharashtra,400058,Western Suburbs,PREMIUM,555000.0,59,21,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-011,Lower Parel Hub (Mumbai),Mumbai,Maharashtra,400013,Central Mumbai,HIGH_STREET,475000.0,57,23,HIGH_REFUND_COST,2026-05-01T00:00:00+05:30,,True
+STR-012,Dadar Hub (Mumbai),Mumbai,Maharashtra,400014,Central Mumbai,HIGH_STREET,511000.0,47,11,PICKING_BOTTLENECK,2026-05-01T00:00:00+05:30,,True
+STR-013,Powai Hub (Mumbai),Mumbai,Maharashtra,400072,Central Mumbai,HIGH_STREET,483000.0,69,14,HIGH_RIDER_COST,2026-05-01T00:00:00+05:30,,True
+STR-014,Colaba Hub (Mumbai),Mumbai,Maharashtra,400001,South Mumbai,PREMIUM,567000.0,77,20,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-015,Hauz Khas Hub (Delhi NCR),New Delhi,Delhi NCR,110016,South Delhi,PREMIUM,491000.0,65,23,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-016,Saket Hub (Delhi NCR),Delhi NCR,Delhi NCR,110017,South Delhi,PREMIUM,463000.0,82,17,HIGH_DISCOUNT_BURN,2026-05-01T00:00:00+05:30,,True
+STR-017,DLF Phase 3 Hub (Delhi NCR),Delhi NCR,Delhi NCR,122001,Gurugram,HIGH_STREET,382000.0,78,15,STOCKOUT_LOSS,2026-05-01T00:00:00+05:30,,True
+STR-018,Sohna Road Hub (Delhi NCR),Delhi NCR,Delhi NCR,122002,Gurugram,HIGH_STREET,364000.0,75,18,TRANSIT_DELAY,2026-05-01T00:00:00+05:30,,True
+STR-019,Noida Sec 18 Hub (Delhi NCR),Delhi NCR,Delhi NCR,201301,Noida & East Delhi,STANDARD,262000.0,71,20,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-020,Indirapuram Hub (Delhi NCR),Delhi NCR,Delhi NCR,201304,Noida & East Delhi,STANDARD,270000.0,59,22,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-021,T Nagar Hub (Chennai),Madras,Tamil Nadu,600006,Central Chennai,HIGH_STREET,322000.0,57,17,RIDER_SHORTAGE,2026-05-01T00:00:00+05:30,,True
+STR-022,Nungambakkam Hub (Chennai),Chennai,Tamil Nadu,600017,Central Chennai,HIGH_STREET,328000.0,68,22,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-023,Adyar Hub (Chennai),Chennai,Tamil Nadu,600020,South Chennai,STANDARD,249000.0,53,8,PICKING_BOTTLENECK,2026-05-01T00:00:00+05:30,,True
+STR-024,Velachery Hub (Chennai),Chennai,Tamil Nadu,600042,South Chennai,STANDARD,240000.0,79,15,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-025,Anna Nagar Hub (Chennai),Chennai,Tamil Nadu,600040,North & West Chennai,STANDARD,207000.0,78,21,HEALTHY,2026-05-01T00:00:00+05:30,,True
+STR-999,Invalid Test Hub,Bangalore,Karnataka,5600A1,South Bengaluru,PREMIUM,430000.0,74,18,HEALTHY,2026-05-01T00:00:00+05:30,,True

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "0e8c5fc2fedc5b98b5fa",
+  "position": {
+    "x": 520,
+    "y": 98,
+    "z": 7,
+    "width": 236,
+    "height": 95,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "SLA Breach Rate %"
+                }
+              },
+              "queryRef": "fact_orders.SLA Breach Rate %",
+              "nativeQueryRef": "SLA Breach Rate %"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SLA Breach Rate %'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

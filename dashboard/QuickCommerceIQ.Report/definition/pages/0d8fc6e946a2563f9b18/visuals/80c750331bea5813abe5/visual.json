@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "80c750331bea5813abe5",
+  "position": {
+    "x": 20,
+    "y": 20,
+    "z": 1,
+    "width": 610,
+    "height": 325,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_cohort_retention_by_sla"
+                    }
+                  },
+                  "Property": "month_number"
+                }
+              },
+              "queryRef": "analytics_cohort_retention_by_sla.month_number",
+              "nativeQueryRef": "month_number"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_cohort_retention_by_sla"
+                    }
+                  },
+                  "Property": "sla_segment"
+                }
+              },
+              "queryRef": "analytics_cohort_retention_by_sla.sla_segment",
+              "nativeQueryRef": "sla_segment"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_cohort_retention_by_sla"
+                    }
+                  },
+                  "Property": "retention_pct"
+                }
+              },
+              "queryRef": "analytics_cohort_retention_by_sla.retention_pct",
+              "nativeQueryRef": "retention_pct"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cohort Retention Curve by First-Order SLA Segment'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

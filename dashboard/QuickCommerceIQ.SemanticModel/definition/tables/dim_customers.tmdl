@@ -1,0 +1,68 @@
+table dim_customers
+	lineageTag: b3eb0950-aeae-580e-9192-2ce965a0d092
+
+	column customer_id
+		dataType: string
+		lineageTag: bc70c2b1-d4bf-522d-8149-4df8201e137d
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column acquisition_channel
+		dataType: string
+		lineageTag: 9d5cfa9e-8067-5b88-a1a8-764070a81e54
+		summarizeBy: none
+		sourceColumn: acquisition_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_segment
+		dataType: string
+		lineageTag: df02aeef-5a11-5021-bfec-377434640be7
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 700bc3a1-5689-55e4-955e-057dfca6f080
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_store_id
+		dataType: string
+		lineageTag: 27ac7d04-07d9-530d-909e-63a08434dc16
+		summarizeBy: none
+		sourceColumn: home_store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_date
+		dataType: string
+		lineageTag: f708a971-a3ca-55e6-8344-52f91929c8a5
+		summarizeBy: none
+		sourceColumn: registration_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_order_date
+		dataType: string
+		lineageTag: 3d0c2110-068b-557a-8e1f-00c3ef51aadb
+		summarizeBy: none
+		sourceColumn: first_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customers = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\dim_customers_clean.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"customer_id", type text}, {"acquisition_channel", type text}, {"customer_segment", type text}, {"city", type text}, {"home_store_id", type text}, {"registration_date", type text}, {"first_order_date", type text}})
+			in
+				#"Changed Type"

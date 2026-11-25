@@ -1,0 +1,92 @@
+table analytics_sla_by_hour
+	lineageTag: 5159344d-b6d9-542b-a12e-6bcec6e5cf8a
+
+	column hour_ist
+		dataType: int64
+		formatString: 0
+		lineageTag: 96077a16-7f7c-5938-9b24-f8e0a9cc87e8
+		summarizeBy: none
+		sourceColumn: hour_ist
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 81cb0deb-0b58-54c7-a9b7-8ccd265d715c
+		summarizeBy: sum
+		sourceColumn: delivered_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column sla_breach_pct
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: f2834e5a-31c2-5f61-a277-cb568e5c7d17
+		summarizeBy: sum
+		sourceColumn: sla_breach_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_delivery_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 74a13345-51cd-5e04-95d5-31e05273c657
+		summarizeBy: sum
+		sourceColumn: avg_delivery_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_picking_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: f6d038c8-9908-5530-a1cf-8e86fef632b9
+		summarizeBy: sum
+		sourceColumn: avg_picking_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_assignment_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 146e979f-d510-5ac4-a55b-e4ea42d3ddf6
+		summarizeBy: sum
+		sourceColumn: avg_assignment_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_transit_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 362c9dc4-f646-51a7-a250-904da32c7dc5
+		summarizeBy: sum
+		sourceColumn: avg_transit_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column breach_delta_prev_hr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 79f095b0-d874-5e53-85fb-3be5b2a95d7a
+		summarizeBy: sum
+		sourceColumn: breach_delta_prev_hr
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_bottleneck
+		dataType: string
+		lineageTag: e8b2a9e4-9bf3-5834-ba23-46a973b875d1
+		summarizeBy: none
+		sourceColumn: primary_bottleneck
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_sla_by_hour = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_sla_by_hour.csv"), [Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"hour_ist", Int64.Type}, {"delivered_orders", Int64.Type}, {"sla_breach_pct", type number}, {"avg_delivery_min", type number}, {"avg_picking_min", type number}, {"avg_assignment_min", type number}, {"avg_transit_min", type number}, {"breach_delta_prev_hr", type number}, {"primary_bottleneck", type text}})
+			in
+				#"Changed Type"

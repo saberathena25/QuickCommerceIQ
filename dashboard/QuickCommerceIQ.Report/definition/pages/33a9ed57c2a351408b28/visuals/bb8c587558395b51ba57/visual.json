@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "bb8c587558395b51ba57",
+  "position": {
+    "x": 20,
+    "y": 462,
+    "z": 12,
+    "width": 520,
+    "height": 245,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_dark_stores"
+                    }
+                  },
+                  "Property": "store_name"
+                }
+              },
+              "queryRef": "dim_dark_stores.store_name",
+              "nativeQueryRef": "store_name"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "NCM per Order (INR)"
+                }
+              },
+              "queryRef": "fact_orders.NCM per Order (INR)",
+              "nativeQueryRef": "NCM per Order (INR)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Store Profitability (Avg NCM per Order INR)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

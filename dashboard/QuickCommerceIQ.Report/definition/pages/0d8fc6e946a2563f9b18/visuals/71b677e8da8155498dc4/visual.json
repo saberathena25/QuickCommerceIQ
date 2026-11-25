@@ -1,0 +1,157 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "71b677e8da8155498dc4",
+  "position": {
+    "x": 515,
+    "y": 360,
+    "z": 4,
+    "width": 745,
+    "height": 340,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "metric"
+                }
+              },
+              "queryRef": "experiment_results.metric",
+              "nativeQueryRef": "metric"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "role"
+                }
+              },
+              "queryRef": "experiment_results.role",
+              "nativeQueryRef": "role"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "control_value"
+                }
+              },
+              "queryRef": "experiment_results.control_value",
+              "nativeQueryRef": "control_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "treatment_value"
+                }
+              },
+              "queryRef": "experiment_results.treatment_value",
+              "nativeQueryRef": "treatment_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "absolute_diff"
+                }
+              },
+              "queryRef": "experiment_results.absolute_diff",
+              "nativeQueryRef": "absolute_diff"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "relative_lift_pct"
+                }
+              },
+              "queryRef": "experiment_results.relative_lift_pct",
+              "nativeQueryRef": "relative_lift_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "p_value"
+                }
+              },
+              "queryRef": "experiment_results.p_value",
+              "nativeQueryRef": "p_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experiment_results"
+                    }
+                  },
+                  "Property": "significant_at_5pct"
+                }
+              },
+              "queryRef": "experiment_results.significant_at_5pct",
+              "nativeQueryRef": "significant_at_5pct"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'A/B Statistical Readout (SRM Passed | Recommendation: TARGETED_ROLLOUT_OR_229_TEST)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

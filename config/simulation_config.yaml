@@ -1,0 +1,41 @@
+seed: 42
+
+date_range:
+  start_date: "2026-05-01"
+  end_date: "2026-10-31"
+  days: 184
+
+scale:
+  dark_stores: 25
+  customers: 42000
+  riders: 600
+  skus: 650
+  base_orders_per_day_start: 710
+  qoq_growth_rate: 0.28 # ~28% QoQ growth yielding ~155,000+ orders over 6 months
+
+economics:
+  packaging_cost_base_inr: 6.50
+  handling_fee_inr: 5.00
+  delivery_fee_below_threshold_inr: 25.00
+  free_delivery_threshold_default_inr: 199.0
+  surge_fee_peak_rain_inr: 15.00
+  cod_settlement_leakage_inr: 3.50
+  # Margin deterioration levers across 6 months (from ~+18 INR early to ~-6 INR late)
+  early_discount_rate: 0.045
+  late_discount_rate: 0.115
+  early_rider_payout_base: 26.0
+  late_rider_payout_base: 36.0
+  monsoon_rider_bonus_inr: 14.0
+
+messy_data_rates:
+  duplicate_webhook_rate: 0.012
+  duplicate_notification_rate: 0.008
+  city_typo_rate: 0.025
+  malformed_pincode_rate: 0.006
+  utc_ist_mixed_tz_rate: 0.030
+  invalid_lifecycle_rate: 0.005
+  missing_rider_on_delivered_rate: 0.004
+  invalid_sku_ref_rate: 0.003
+  negative_price_cost_rate: 0.003
+  inconsistent_payment_label_rate: 0.035
+  negative_inventory_glitch_rate: 0.008

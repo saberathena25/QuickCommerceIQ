@@ -1,0 +1,110 @@
+table analytics_ncm_monthly
+	lineageTag: 43c4ebd1-7426-59b4-90a1-7c706443df89
+
+	column year_month
+		dataType: string
+		lineageTag: f30f21d5-ea26-5483-b06d-7797d19bf3a9
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 5627d5cf-f01e-566c-9706-203f1330ea8c
+		summarizeBy: sum
+		sourceColumn: total_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e9a5503-6ddd-5773-bc9b-a236b9504618
+		summarizeBy: sum
+		sourceColumn: delivered_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_gmv_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: c78a0ac8-85a0-580e-b64a-3ff0a046f207
+		summarizeBy: sum
+		sourceColumn: total_gmv_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_gross_margin_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: a779cb9e-23f3-5fea-b684-ef237713f848
+		summarizeBy: sum
+		sourceColumn: total_gross_margin_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_ncm_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 3ef7e0e0-c3a5-55b1-813e-826cf667345c
+		summarizeBy: sum
+		sourceColumn: total_ncm_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_ncm_per_order_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: b523f40d-2dad-56a6-a23b-9c62b2c43426
+		summarizeBy: sum
+		sourceColumn: avg_ncm_per_order_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_cart_value_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: a7f5f941-93de-51b7-bba3-c1b0c4572bd9
+		summarizeBy: sum
+		sourceColumn: avg_cart_value_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_discount_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: feb9028b-fe43-58e0-82cb-5d12af67640d
+		summarizeBy: sum
+		sourceColumn: avg_discount_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_rider_payout_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: bd3d98b5-4ed2-5a13-ae5c-63612933ca87
+		summarizeBy: sum
+		sourceColumn: avg_rider_payout_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_refund_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 5fc9a965-4672-5321-a2d4-59c2b8cd5410
+		summarizeBy: sum
+		sourceColumn: avg_refund_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_ncm_monthly = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_ncm_monthly.csv"), [Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"year_month", type text}, {"total_orders", Int64.Type}, {"delivered_orders", Int64.Type}, {"total_gmv_inr", type number}, {"total_gross_margin_inr", type number}, {"total_ncm_inr", type number}, {"avg_ncm_per_order_inr", type number}, {"avg_cart_value_inr", type number}, {"avg_discount_inr", type number}, {"avg_rider_payout_inr", type number}, {"avg_refund_inr", type number}})
+			in
+				#"Changed Type"

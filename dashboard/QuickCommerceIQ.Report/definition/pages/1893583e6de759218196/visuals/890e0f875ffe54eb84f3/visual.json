@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "890e0f875ffe54eb84f3",
+  "position": {
+    "x": 645,
+    "y": 20,
+    "z": 2,
+    "width": 615,
+    "height": 320,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "stackedBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_dark_stores"
+                    }
+                  },
+                  "Property": "city"
+                }
+              },
+              "queryRef": "dim_dark_stores.city",
+              "nativeQueryRef": "city"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "Avg Picking Time (Min)"
+                }
+              },
+              "queryRef": "fact_orders.Avg Picking Time (Min)",
+              "nativeQueryRef": "Avg Picking Time (Min)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "Avg Rider Assignment Time (Min)"
+                }
+              },
+              "queryRef": "fact_orders.Avg Rider Assignment Time (Min)",
+              "nativeQueryRef": "Avg Rider Assignment Time (Min)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "Avg Transit Time (Min)"
+                }
+              },
+              "queryRef": "fact_orders.Avg Transit Time (Min)",
+              "nativeQueryRef": "Avg Transit Time (Min)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Delivery Stage Decomposition by City (Minutes)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

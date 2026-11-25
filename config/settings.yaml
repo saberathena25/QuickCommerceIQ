@@ -1,0 +1,44 @@
+project:
+  name: "QuickCommerceIQ"
+  full_title: "Dark Store Operations, Delivery SLA & Unit Economics Analytics Platform"
+  currency: "INR"
+  currency_symbol: "₹"
+  timezone: "Asia/Kolkata"
+  sla_target_minutes: 12
+
+paths:
+  raw_dir: "data/raw"
+  staging_dir: "data/staging"
+  processed_dir: "data/processed"
+  sample_dir: "data/sample"
+  reports_dir: "reports"
+  excel_dir: "excel_models"
+  sql_dir: "sql"
+
+etl:
+  batch_size: 10000
+  strict_quality_gate: true
+  max_rejection_rate_pct: 8.0
+  refresh_cadence:
+    order_events: "1 minute"
+    rider_events: "1 minute"
+    inventory_snapshots: "15 minutes"
+    weather_data: "30 minutes"
+    financial_analytics: "1 hour"
+    cohorts_and_ab_reports: "1 day"
+
+analytics:
+  peak_stockout_hours: [19, 20, 21] # 7 PM to 10 PM IST (hours 19, 20, 21)
+  sla_buckets:
+    fast_max_minutes: 12.0
+    medium_max_minutes: 20.0
+  ab_experiment:
+    name: "free_delivery_threshold_199_vs_249"
+    control_threshold_inr: 199.0
+    treatment_threshold_inr: 249.0
+    allocation_ratio: 0.50
+    alpha: 0.05
+    target_power: 0.80
+    mde_nppu_inr: 4.50
+    guardrail_repeat_rate_non_inferiority: -0.015
+    guardrail_cart_abandonment_max_increase: 0.035

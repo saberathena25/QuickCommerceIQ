@@ -1,0 +1,101 @@
+sku_id,sku_name,category,subcategory,unit_cost,selling_price,gross_margin,gross_margin_pct,supplier,reorder_threshold,is_peak_hero,effective_from,effective_to,is_current
+SKU-0001,Nandini Premium Paneer 150g,Dairy,Paneer & Cheese,83.93,104.45,20.52,19.64,Nandini,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0002,Local Rich Leafy Greens 500ml,Fruits & Vegetables,Leafy Greens,38.57,53.34,14.77,27.69,Local Mandi Co,29,True,2026-05-01T00:00:00+05:30,,True
+SKU-0003,Paper Active Soft Drinks 500g,Beverages,Soft Drinks & Juices,31.99,39.57,7.58,19.15,Paper Boat,22,True,2026-05-01T00:00:00+05:30,,True
+SKU-0004,Haldiram's Gold Biscuits 100g,Snacks,Biscuits & Cookies,44.42,59.75,15.33,25.65,Haldiram's,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0005,Marico Mini Skincare 1L,Personal Care,Skincare,109.63,157.4,47.77,30.35,Marico,25,True,2026-05-01T00:00:00+05:30,,True
+SKU-0006,Reckitt Daily Detergents 1kg,Household Essentials,Detergents & Cleaners,89.8,116.68,26.88,23.04,Reckitt,24,True,2026-05-01T00:00:00+05:30,,True
+SKU-0007,Harvest Fresh Cakes 750ml,Bakery,Cakes & Muffins,20.45,27.77,7.32,26.37,Harvest Gold,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0008,Nestle Family Pack Breakfast Cereals Pack of 4,Packaged Foods,Breakfast Cereals,65.85,86.28,20.43,23.68,Nestle India,16,True,2026-05-01T00:00:00+05:30,,True
+SKU-0009,Nandini Organic Milk 250ml,Dairy,Milk & Curd,44.74,52.31,7.57,14.47,Nandini,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0010,Sahyadri Classic Seasonal Fruits 200g,Fruits & Vegetables,Seasonal Fruits,28.99,40.61,11.62,28.62,Sahyadri Farms,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0011,Paper Premium Energy 150g,Beverages,Energy & Health Drinks,72.66,97.98,25.32,25.84,Paper Boat,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0012,Haldiram's Rich Chips 500ml,Snacks,Chips & Namkeen,38.52,53.61,15.09,28.14,Haldiram's,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0013,Marico Active Oral 500g,Personal Care,Oral & Hair Care,46.77,61.72,14.95,24.23,Marico,14,True,2026-05-01T00:00:00+05:30,,True
+SKU-0014,Godrej Gold Pooja 100g,Household Essentials,Pooja & Utility,107.02,141.97,34.95,24.62,Godrej Consumer,14,True,2026-05-01T00:00:00+05:30,,True
+SKU-0015,Modern Mini Breads 1L,Bakery,Breads & Pav,28.84,39.51,10.67,27.01,Modern Foods,33,True,2026-05-01T00:00:00+05:30,,True
+SKU-0016,Nestle Daily Staples 1kg,Packaged Foods,Staples & Atta,103.54,129.45,25.91,20.02,Nestle India,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0017,Nandini Fresh Butter 750ml,Dairy,Butter & Ghee,58.6,70.1,11.5,16.41,Nandini,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0018,FarmFresh Family Pack Fresh Vegetables Pack of 4,Fruits & Vegetables,Fresh Vegetables,35.37,45.86,10.49,22.88,FarmFresh Direct,26,True,2026-05-01T00:00:00+05:30,,True
+SKU-0019,Paper Organic Tea 250ml,Beverages,Tea & Coffee,26.43,36.52,10.09,27.62,Paper Boat,20,True,2026-05-01T00:00:00+05:30,,True
+SKU-0020,Haldiram's Classic Chocolates 200g,Snacks,Chocolates,63.01,81.47,18.46,22.66,Haldiram's,32,True,2026-05-01T00:00:00+05:30,,True
+SKU-0021,Marico Premium Bath 150g,Personal Care,Bath & Body,129.65,190.07,60.42,31.79,Marico,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0022,P&G Rich Paper 500ml,Household Essentials,Paper & Disposables,77.01,99.65,22.64,22.72,P&G India,28,True,2026-05-01T00:00:00+05:30,,True
+SKU-0023,Theobroma Active Artisanal Bakes 500g,Bakery,Artisanal Bakes,23.23,33.68,10.45,31.03,Theobroma Supply,14,True,2026-05-01T00:00:00+05:30,,True
+SKU-0024,Nestle Gold Instant Noodles 100g,Packaged Foods,Instant Noodles & Pasta,44.97,55.35,10.38,18.75,Nestle India,22,True,2026-05-01T00:00:00+05:30,,True
+SKU-0025,Nandini Mini Paneer 1L,Dairy,Paneer & Cheese,79.59,94.09,14.5,15.41,Nandini,22,True,2026-05-01T00:00:00+05:30,,True
+SKU-0026,Local Daily Leafy Greens 1kg,Fruits & Vegetables,Leafy Greens,54.1,76.41,22.31,29.19,Local Mandi Co,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0027,Paper Fresh Soft Drinks 750ml,Beverages,Soft Drinks & Juices,60.95,80.49,19.54,24.27,Paper Boat,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0028,Haldiram's Family Pack Biscuits Pack of 4,Snacks,Biscuits & Cookies,60.74,76.74,16.0,20.84,Haldiram's,25,True,2026-05-01T00:00:00+05:30,,True
+SKU-0029,Marico Organic Skincare 250ml,Personal Care,Skincare,76.74,101.53,24.79,24.42,Marico,16,True,2026-05-01T00:00:00+05:30,,True
+SKU-0030,Reckitt Classic Detergents 200g,Household Essentials,Detergents & Cleaners,63.73,81.13,17.4,21.45,Reckitt,23,True,2026-05-01T00:00:00+05:30,,True
+SKU-0031,Harvest Premium Cakes 150g,Bakery,Cakes & Muffins,24.75,34.31,9.56,27.88,Harvest Gold,30,True,2026-05-01T00:00:00+05:30,,True
+SKU-0032,Nestle Rich Breakfast Cereals 500ml,Packaged Foods,Breakfast Cereals,129.0,163.77,34.77,21.23,Nestle India,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0033,Nandini Active Milk 500g,Dairy,Milk & Curd,53.62,65.97,12.35,18.73,Nandini,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0034,Sahyadri Gold Seasonal Fruits 100g,Fruits & Vegetables,Seasonal Fruits,67.18,91.81,24.63,26.82,Sahyadri Farms,12,True,2026-05-01T00:00:00+05:30,,True
+SKU-0035,Paper Mini Energy 1L,Beverages,Energy & Health Drinks,105.18,129.58,24.4,18.83,Paper Boat,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0036,Haldiram's Daily Chips 1kg,Snacks,Chips & Namkeen,43.52,61.62,18.1,29.38,Haldiram's,23,True,2026-05-01T00:00:00+05:30,,True
+SKU-0037,Marico Fresh Oral 750ml,Personal Care,Oral & Hair Care,90.14,126.48,36.34,28.73,Marico,30,True,2026-05-01T00:00:00+05:30,,True
+SKU-0038,Godrej Family Pack Pooja Pack of 4,Household Essentials,Pooja & Utility,60.87,81.39,20.52,25.21,Godrej Consumer,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0039,Modern Organic Breads 250ml,Bakery,Breads & Pav,50.17,64.5,14.33,22.22,Modern Foods,20,True,2026-05-01T00:00:00+05:30,,True
+SKU-0040,Nestle Classic Staples 200g,Packaged Foods,Staples & Atta,131.9,159.42,27.52,17.26,Nestle India,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0041,Nandini Premium Butter 150g,Dairy,Butter & Ghee,77.5,91.04,13.54,14.87,Nandini,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0042,FarmFresh Rich Fresh Vegetables 500ml,Fruits & Vegetables,Fresh Vegetables,28.32,39.66,11.34,28.59,FarmFresh Direct,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0043,Paper Active Tea 500g,Beverages,Tea & Coffee,90.5,121.78,31.28,25.69,Paper Boat,19,True,2026-05-01T00:00:00+05:30,,True
+SKU-0044,Haldiram's Gold Chocolates 100g,Snacks,Chocolates,79.27,102.02,22.75,22.3,Haldiram's,14,True,2026-05-01T00:00:00+05:30,,True
+SKU-0045,Marico Mini Bath 1L,Personal Care,Bath & Body,28.88,40.99,12.11,29.55,Marico,24,True,2026-05-01T00:00:00+05:30,,True
+SKU-0046,P&G Daily Paper 1kg,Household Essentials,Paper & Disposables,114.08,158.62,44.54,28.08,P&G India,20,True,2026-05-01T00:00:00+05:30,,True
+SKU-0047,Theobroma Fresh Artisanal Bakes 750ml,Bakery,Artisanal Bakes,36.66,53.54,16.88,31.53,Theobroma Supply,26,True,2026-05-01T00:00:00+05:30,,True
+SKU-0048,Nestle Family Pack Instant Noodles Pack of 4,Packaged Foods,Instant Noodles & Pasta,83.54,102.26,18.72,18.3,Nestle India,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0049,Nandini Organic Paneer 250ml,Dairy,Paneer & Cheese,116.24,137.26,21.02,15.32,Nandini,24,True,2026-05-01T00:00:00+05:30,,True
+SKU-0050,Local Classic Leafy Greens 200g,Fruits & Vegetables,Leafy Greens,35.06,51.5,16.44,31.92,Local Mandi Co,13,True,2026-05-01T00:00:00+05:30,,True
+SKU-0051,Paper Premium Soft Drinks 150g,Beverages,Soft Drinks & Juices,107.92,144.83,36.91,25.49,Paper Boat,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0052,Haldiram's Rich Biscuits 500ml,Snacks,Biscuits & Cookies,74.72,99.88,25.16,25.19,Haldiram's,32,True,2026-05-01T00:00:00+05:30,,True
+SKU-0053,Marico Active Skincare 500g,Personal Care,Skincare,58.41,85.55,27.14,31.72,Marico,19,True,2026-05-01T00:00:00+05:30,,True
+SKU-0054,Reckitt Gold Detergents 100g,Household Essentials,Detergents & Cleaners,69.51,87.92,18.41,20.94,Reckitt,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0055,Harvest Mini Cakes 1L,Bakery,Cakes & Muffins,69.5,92.21,22.71,24.62,Harvest Gold,12,True,2026-05-01T00:00:00+05:30,,True
+SKU-0056,Nestle Daily Breakfast Cereals 1kg,Packaged Foods,Breakfast Cereals,50.69,61.15,10.46,17.1,Nestle India,33,True,2026-05-01T00:00:00+05:30,,True
+SKU-0057,Nandini Fresh Milk 750ml,Dairy,Milk & Curd,105.59,124.56,18.97,15.23,Nandini,29,True,2026-05-01T00:00:00+05:30,,True
+SKU-0058,Sahyadri Family Pack Seasonal Fruits Pack of 4,Fruits & Vegetables,Seasonal Fruits,44.43,64.15,19.72,30.75,Sahyadri Farms,16,True,2026-05-01T00:00:00+05:30,,True
+SKU-0059,Paper Organic Energy 250ml,Beverages,Energy & Health Drinks,37.48,47.5,10.02,21.1,Paper Boat,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0060,Haldiram's Classic Chips 200g,Snacks,Chips & Namkeen,80.48,107.32,26.84,25.01,Haldiram's,29,True,2026-05-01T00:00:00+05:30,,True
+SKU-0061,Marico Premium Oral 150g,Personal Care,Oral & Hair Care,44.01,58.02,14.01,24.14,Marico,16,True,2026-05-01T00:00:00+05:30,,True
+SKU-0062,Godrej Rich Pooja 500ml,Household Essentials,Pooja & Utility,36.93,50.43,13.5,26.78,Godrej Consumer,17,True,2026-05-01T00:00:00+05:30,,True
+SKU-0063,Modern Active Breads 500g,Bakery,Breads & Pav,26.23,35.96,9.73,27.06,Modern Foods,33,True,2026-05-01T00:00:00+05:30,,True
+SKU-0064,Nestle Gold Staples 100g,Packaged Foods,Staples & Atta,92.21,112.17,19.96,17.8,Nestle India,27,True,2026-05-01T00:00:00+05:30,,True
+SKU-0065,Nandini Mini Butter 1L,Dairy,Butter & Ghee,97.38,121.3,23.92,19.72,Nandini,13,True,2026-05-01T00:00:00+05:30,,True
+SKU-0066,FarmFresh Daily Fresh Vegetables 1kg,Fruits & Vegetables,Fresh Vegetables,21.56,28.09,6.53,23.24,FarmFresh Direct,28,True,2026-05-01T00:00:00+05:30,,True
+SKU-0067,Paper Fresh Tea 750ml,Beverages,Tea & Coffee,116.93,149.86,32.93,21.98,Paper Boat,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0068,Haldiram's Family Pack Chocolates Pack of 4,Snacks,Chocolates,45.06,61.42,16.36,26.63,Haldiram's,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0069,Marico Organic Bath 250ml,Personal Care,Bath & Body,137.42,187.9,50.48,26.86,Marico,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0070,P&G Classic Paper 200g,Household Essentials,Paper & Disposables,25.2,33.85,8.65,25.55,P&G India,33,True,2026-05-01T00:00:00+05:30,,True
+SKU-0071,Theobroma Premium Artisanal Bakes 150g,Bakery,Artisanal Bakes,63.14,82.06,18.92,23.06,Theobroma Supply,28,True,2026-05-01T00:00:00+05:30,,True
+SKU-0072,Nestle Rich Instant Noodles 500ml,Packaged Foods,Instant Noodles & Pasta,66.17,87.87,21.7,24.7,Nestle India,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0073,Nandini Active Paneer 500g,Dairy,Paneer & Cheese,75.49,96.12,20.63,21.46,Nandini,28,True,2026-05-01T00:00:00+05:30,,True
+SKU-0074,Local Gold Leafy Greens 100g,Fruits & Vegetables,Leafy Greens,37.88,53.99,16.11,29.85,Local Mandi Co,30,True,2026-05-01T00:00:00+05:30,,True
+SKU-0075,Paper Mini Soft Drinks 1L,Beverages,Soft Drinks & Juices,18.2,22.5,4.3,19.09,Paper Boat,18,True,2026-05-01T00:00:00+05:30,,True
+SKU-0076,Haldiram's Daily Biscuits 1kg,Snacks,Biscuits & Cookies,70.45,90.7,20.25,22.33,Haldiram's,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0077,Marico Fresh Skincare 750ml,Personal Care,Skincare,83.87,119.92,36.05,30.06,Marico,33,True,2026-05-01T00:00:00+05:30,,True
+SKU-0078,Reckitt Family Pack Detergents Pack of 4,Household Essentials,Detergents & Cleaners,93.69,123.48,29.79,24.13,Reckitt,31,True,2026-05-01T00:00:00+05:30,,True
+SKU-0079,Harvest Organic Cakes 250ml,Bakery,Cakes & Muffins,43.27,58.68,15.41,26.26,Harvest Gold,14,True,2026-05-01T00:00:00+05:30,,True
+SKU-0080,Nestle Classic Breakfast Cereals 200g,Packaged Foods,Breakfast Cereals,123.96,155.12,31.16,20.09,Nestle India,26,True,2026-05-01T00:00:00+05:30,,True
+SKU-0081,Nandini Premium Milk 150g,Dairy,Milk & Curd,45.41,53.99,8.58,15.89,Nandini,34,True,2026-05-01T00:00:00+05:30,,True
+SKU-0082,Sahyadri Rich Seasonal Fruits 500ml,Fruits & Vegetables,Seasonal Fruits,62.23,80.88,18.65,23.05,Sahyadri Farms,29,True,2026-05-01T00:00:00+05:30,,True
+SKU-0083,Paper Active Energy 500g,Beverages,Energy & Health Drinks,22.3,29.32,7.02,23.94,Paper Boat,20,True,2026-05-01T00:00:00+05:30,,True
+SKU-0084,Haldiram's Gold Chips 100g,Snacks,Chips & Namkeen,71.78,93.34,21.56,23.1,Haldiram's,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0085,Marico Mini Oral 1L,Personal Care,Oral & Hair Care,38.75,58.02,19.27,33.21,Marico,25,True,2026-05-01T00:00:00+05:30,,True
+SKU-0086,Godrej Daily Pooja 1kg,Household Essentials,Pooja & Utility,58.17,74.13,15.96,21.54,Godrej Consumer,15,True,2026-05-01T00:00:00+05:30,,True
+SKU-0087,Modern Fresh Breads 750ml,Bakery,Breads & Pav,27.53,35.39,7.86,22.21,Modern Foods,28,True,2026-05-01T00:00:00+05:30,,True
+SKU-0088,Nestle Family Pack Staples Pack of 4,Packaged Foods,Staples & Atta,42.76,51.2,8.44,16.48,Nestle India,13,True,2026-05-01T00:00:00+05:30,,True
+SKU-0089,Nandini Organic Butter 250ml,Dairy,Butter & Ghee,76.95,95.53,18.58,19.45,Nandini,30,True,2026-05-01T00:00:00+05:30,,True
+SKU-0090,FarmFresh Classic Fresh Vegetables 200g,Fruits & Vegetables,Fresh Vegetables,31.0,42.49,11.49,27.05,FarmFresh Direct,21,True,2026-05-01T00:00:00+05:30,,True
+SKU-0091,Paper Premium Tea 150g,Beverages,Tea & Coffee,104.72,142.5,37.78,26.51,Paper Boat,24,False,2026-05-01T00:00:00+05:30,,True
+SKU-0092,Haldiram's Rich Chocolates 500ml,Snacks,Chocolates,25.03,32.24,7.21,22.37,Haldiram's,12,False,2026-05-01T00:00:00+05:30,,True
+SKU-0093,Marico Active Bath 500g,Personal Care,Bath & Body,52.65,74.9,22.25,29.71,Marico,33,False,2026-05-01T00:00:00+05:30,,True
+SKU-0094,P&G Gold Paper 100g,Household Essentials,Paper & Disposables,28.7,37.63,8.93,23.74,P&G India,21,False,2026-05-01T00:00:00+05:30,,True
+SKU-0095,Theobroma Mini Artisanal Bakes 1L,Bakery,Artisanal Bakes,55.54,72.14,16.6,23.02,Theobroma Supply,14,False,2026-05-01T00:00:00+05:30,,True
+SKU-0096,Nestle Daily Instant Noodles 1kg,Packaged Foods,Instant Noodles & Pasta,24.81,32.79,7.98,24.32,Nestle India,31,False,2026-05-01T00:00:00+05:30,,True
+SKU-0097,Nandini Fresh Paneer 750ml,Dairy,Paneer & Cheese,28.52,35.99,7.47,20.75,Nandini,30,False,2026-05-01T00:00:00+05:30,,True
+SKU-0098,Local Family Pack Leafy Greens Pack of 4,Fruits & Vegetables,Leafy Greens,65.38,93.43,28.05,30.02,Local Mandi Co,32,False,2026-05-01T00:00:00+05:30,,True
+SKU-0099,Paper Organic Soft Drinks 250ml,Beverages,Soft Drinks & Juices,97.59,129.13,31.54,24.42,Paper Boat,26,False,2026-05-01T00:00:00+05:30,,True
+SKU-0100,Haldiram's Classic Biscuits 200g,Snacks,Biscuits & Cookies,20.73,27.78,7.05,25.36,Haldiram's,29,False,2026-05-01T00:00:00+05:30,,True

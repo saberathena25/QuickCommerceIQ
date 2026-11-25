@@ -1,0 +1,131 @@
+table analytics_stockout_store_sku_hour
+	lineageTag: 2419c0cc-ee7a-58d3-8aba-cce322ae8e08
+
+	measure 'Estimated Lost GMV (INR)' = SUM(analytics_stockout_store_sku_hour[estimated_lost_gmv_inr])
+		formatString: "₹"#,##,##0.00
+		lineageTag: e80515ce-ef6f-5af8-992b-14bd57b3ca45
+
+	measure 'Estimated Lost Margin (INR)' = SUM(analytics_stockout_store_sku_hour[estimated_lost_margin_inr])
+		formatString: "₹"#,##,##0.00
+		lineageTag: 07ea12f4-b2f6-5235-8ba5-8bdb984808f3
+
+	column store_id
+		dataType: string
+		lineageTag: 7bd3897a-c051-5d34-b4fc-673f01d6aa5c
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_name
+		dataType: string
+		lineageTag: 1902757a-16bc-551e-9cd0-d59ec898afe1
+		summarizeBy: none
+		sourceColumn: store_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 5ebd466b-172b-5904-8459-5afc2d252ab2
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku_id
+		dataType: string
+		lineageTag: dc73cc5e-0be0-5db5-ab5a-12492b59044c
+		summarizeBy: none
+		sourceColumn: sku_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku_name
+		dataType: string
+		lineageTag: b038e211-0cb9-55b5-8faf-9bc90b11b344
+		summarizeBy: none
+		sourceColumn: sku_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 631695fd-401e-520d-9fd2-a3ee94a410e9
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column hour_ist
+		dataType: int64
+		formatString: 0
+		lineageTag: 6adb7be4-7354-55d6-995d-6368168592a3
+		summarizeBy: none
+		sourceColumn: hour_ist
+
+		annotation SummarizationSetBy = Automatic
+
+	column stockout_hours
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 8d61348c-b4e2-579c-9831-2cad1845e30a
+		summarizeBy: sum
+		sourceColumn: stockout_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_stock_hours
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: f6f07288-017e-5ea3-acbb-d1592e46ca66
+		summarizeBy: sum
+		sourceColumn: in_stock_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column observed_units_sold
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: b7aa1c66-7b40-571b-871e-a8bdb7f9d543
+		summarizeBy: sum
+		sourceColumn: observed_units_sold
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_lost_units
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: afbfd1ba-e6b8-50b6-b51a-aeaaecf5cefd
+		summarizeBy: sum
+		sourceColumn: estimated_lost_units
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_lost_gmv_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 0847f6ef-c3d7-55b8-8cf9-8b069fdfd138
+		summarizeBy: sum
+		sourceColumn: estimated_lost_gmv_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_lost_margin_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 513bd88f-1129-5973-8960-452be476dc1b
+		summarizeBy: sum
+		sourceColumn: estimated_lost_margin_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_stockout_store_sku_hour = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_stockout_store_sku_hour.csv"), [Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"store_id", type text}, {"store_name", type text}, {"city", type text}, {"sku_id", type text}, {"sku_name", type text}, {"category", type text}, {"hour_ist", Int64.Type}, {"stockout_hours", type number}, {"in_stock_hours", type number}, {"observed_units_sold", type number}, {"estimated_lost_units", type number}, {"estimated_lost_gmv_inr", type number}, {"estimated_lost_margin_inr", type number}})
+			in
+				#"Changed Type"

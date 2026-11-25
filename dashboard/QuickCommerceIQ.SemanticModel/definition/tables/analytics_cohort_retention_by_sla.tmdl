@@ -1,0 +1,56 @@
+table analytics_cohort_retention_by_sla
+	lineageTag: 0378208f-54b9-5410-b094-e84c3c2b16f7
+
+	column sla_segment
+		dataType: string
+		lineageTag: f66df02e-ebd4-5c6c-b117-06c5e142fb16
+		summarizeBy: none
+		sourceColumn: sla_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a77d959-81b0-5e7e-9fff-b95d34bdf259
+		summarizeBy: none
+		sourceColumn: month_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_active
+		dataType: int64
+		formatString: 0
+		lineageTag: 9007fbe6-b1f2-5ede-8f07-f6062c057a60
+		summarizeBy: sum
+		sourceColumn: total_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_eligible
+		dataType: int64
+		formatString: 0
+		lineageTag: f9d533de-0ca9-5ae6-bec8-2df73a38c6b2
+		summarizeBy: sum
+		sourceColumn: total_eligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column retention_pct
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 7c87f5bb-379e-5524-9c17-494972c146c6
+		summarizeBy: sum
+		sourceColumn: retention_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_cohort_retention_by_sla = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_cohort_retention_by_sla.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"sla_segment", type text}, {"month_number", Int64.Type}, {"total_active", Int64.Type}, {"total_eligible", Int64.Type}, {"retention_pct", type number}})
+			in
+				#"Changed Type"

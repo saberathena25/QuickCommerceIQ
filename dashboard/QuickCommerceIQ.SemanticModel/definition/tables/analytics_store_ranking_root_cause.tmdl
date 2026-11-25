@@ -1,0 +1,276 @@
+table analytics_store_ranking_root_cause
+	lineageTag: 96a0ff48-9452-528e-84a6-f7116f444e36
+
+	column store_id
+		dataType: string
+		lineageTag: af99b10a-1324-50b3-bbf0-456df853a6ee
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_name
+		dataType: string
+		lineageTag: 20cf6486-f042-59f3-b79e-ee7711dfa903
+		summarizeBy: none
+		sourceColumn: store_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 6edc6b49-d304-52fc-98d2-d84de426df33
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone
+		dataType: string
+		lineageTag: 265ec352-f388-5d74-8a12-30a0de21b0f8
+		summarizeBy: none
+		sourceColumn: zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: ab55e6d2-0baa-5d78-929c-0e01e6f418c5
+		summarizeBy: sum
+		sourceColumn: total_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_gmv_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 0a07eaba-150a-5d03-a79e-d539c170f075
+		summarizeBy: sum
+		sourceColumn: total_gmv_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_level_ncm_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: b8388933-a236-569a-8a0e-317348473ebb
+		summarizeBy: sum
+		sourceColumn: order_level_ncm_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_ncm_per_order_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 21015f7f-6076-57d3-9059-d07611b3359f
+		summarizeBy: sum
+		sourceColumn: avg_ncm_per_order_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_rider_payout_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 4b39eb4d-9acf-54e7-82b1-c3e9ca059b7a
+		summarizeBy: sum
+		sourceColumn: avg_rider_payout_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_discount_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 68efa89f-1a87-57c6-b301-b8870f1e38ef
+		summarizeBy: sum
+		sourceColumn: avg_discount_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_refund_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 77dc1f76-b038-5823-a3e8-b26bdef75c0f
+		summarizeBy: sum
+		sourceColumn: avg_refund_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_discounts_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 11d8c7a4-55bb-5749-8e5a-395b92777d2e
+		summarizeBy: sum
+		sourceColumn: total_discounts_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_monthly_rent_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: ba8b2e27-9a24-5f8a-8451-a6cc780a613a
+		summarizeBy: sum
+		sourceColumn: current_monthly_rent_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column six_month_fixed_cost_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: be8acb65-c396-5361-b36f-2674b4366ce6
+		summarizeBy: sum
+		sourceColumn: six_month_fixed_cost_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_store_operating_profit_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: ccab979e-7b08-54f8-bfa1-7557e45d66b8
+		summarizeBy: sum
+		sourceColumn: net_store_operating_profit_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_pct_of_gmv
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 331254c1-f1ad-5e8d-92fb-23a3141ee1e5
+		summarizeBy: sum
+		sourceColumn: discount_pct_of_gmv
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivered_orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bfa4299-e5a9-533c-be2f-bc26ba590688
+		summarizeBy: sum
+		sourceColumn: delivered_orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_delivery_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 7d30bd08-09f4-55a7-a8a8-e30e413c7540
+		summarizeBy: sum
+		sourceColumn: avg_delivery_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column p90_delivery_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 841a13e8-4c04-50f9-b110-b60766174a31
+		summarizeBy: sum
+		sourceColumn: p90_delivery_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_picking_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 02c317fc-00ea-5b98-a465-77b8f22a80ac
+		summarizeBy: sum
+		sourceColumn: avg_picking_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_assignment_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 1ae33828-a341-52c4-b974-7979ac94f020
+		summarizeBy: sum
+		sourceColumn: avg_assignment_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_transit_min
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: bff8ebdf-e938-501b-91c4-86ffcb68d726
+		summarizeBy: sum
+		sourceColumn: avg_transit_min
+
+		annotation SummarizationSetBy = Automatic
+
+	column sla_breach_pct
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: cd27fc76-2139-5e4c-8bc5-071ab5fc880c
+		summarizeBy: sum
+		sourceColumn: sla_breach_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_bottleneck
+		dataType: string
+		lineageTag: df899b74-f0c5-51bb-b13f-3e66b350a27f
+		summarizeBy: none
+		sourceColumn: primary_bottleneck
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_lost_gmv_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e8cb5b0f-24d0-5ce2-88c1-ea3c1ce8e597
+		summarizeBy: sum
+		sourceColumn: estimated_lost_gmv_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_lost_margin_inr
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 6ad3af93-a9df-5799-9246-6380159a7051
+		summarizeBy: sum
+		sourceColumn: estimated_lost_margin_inr
+
+		annotation SummarizationSetBy = Automatic
+
+	column root_cause_tags
+		dataType: string
+		lineageTag: 68a863dc-7eae-53ac-af2e-9113d0b3b5c7
+		summarizeBy: none
+		sourceColumn: root_cause_tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column profitability_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cf0886d-d2af-5240-8fe7-d6cd72c3b6af
+		summarizeBy: sum
+		sourceColumn: profitability_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column sla_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 1feda7e3-500b-5b8a-8e50-b18bcae8a849
+		summarizeBy: sum
+		sourceColumn: sla_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column efficiency_score
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 6c1b16dd-4594-5971-9720-764dda03878a
+		summarizeBy: sum
+		sourceColumn: efficiency_score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition analytics_store_ranking_root_cause = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("D:\\MP1\\QuickcommerceIQ\\data\\processed\\analytics_store_ranking_root_cause.csv"), [Delimiter=",", Columns=30, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				#"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"store_id", type text}, {"store_name", type text}, {"city", type text}, {"zone", type text}, {"total_orders", Int64.Type}, {"total_gmv_inr", type number}, {"order_level_ncm_inr", type number}, {"avg_ncm_per_order_inr", type number}, {"avg_rider_payout_inr", type number}, {"avg_discount_inr", type number}, {"avg_refund_inr", type number}, {"total_discounts_inr", type number}, {"current_monthly_rent_inr", type number}, {"six_month_fixed_cost_inr", type number}, {"net_store_operating_profit_inr", type number}, {"discount_pct_of_gmv", type number}, {"delivered_orders", Int64.Type}, {"avg_delivery_min", type number}, {"p90_delivery_min", type number}, {"avg_picking_min", type number}, {"avg_assignment_min", type number}, {"avg_transit_min", type number}, {"sla_breach_pct", type number}, {"primary_bottleneck", type text}, {"estimated_lost_gmv_inr", type number}, {"estimated_lost_margin_inr", type number}, {"root_cause_tags", type text}, {"profitability_rank", Int64.Type}, {"sla_rank", Int64.Type}, {"efficiency_score", type number}})
+			in
+				#"Changed Type"

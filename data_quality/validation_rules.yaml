@@ -1,0 +1,72 @@
+version: 1.0
+critical_gates:
+  max_rejection_rate_pct: 8.0
+  require_zero_pk_duplicates_in_accepted: true
+  require_referential_integrity: true
+  require_reconciliation_match: true
+
+rules:
+  orders:
+    required_non_null:
+      - order_id
+      - customer_id
+      - store_id
+      - placed_at
+      - order_status
+      - payment_mode
+    valid_statuses:
+      - DELIVERED
+      - CANCELLED
+    valid_payment_modes:
+      - UPI
+      - CARD
+      - COD
+    valid_weather_tags:
+      - NORMAL
+      - MONSOON
+      - HEAVY_RAIN
+    numeric_non_negative:
+      - cart_value
+      - discounts
+      - delivery_fee
+      - handling_fee
+      - surge_fee
+      - rider_payout
+      - packaging_cost
+      - refund_cost
+    lifecycle_checks:
+      delivered_must_have:
+        - packed_at
+        - dispatched_at
+        - delivered_at
+        - rider_id
+      cancelled_allowed_null:
+        - dispatched_at
+        - delivered_at
+        - rider_id
+      monotonic_sequence:
+        - placed_at
+        - packed_at
+        - dispatched_at
+        - delivered_at
+
+  order_items:
+    required_non_null:
+      - order_id
+      - sku_id
+      - quantity
+      - unit_price
+      - unit_cost
+    positive_fields:
+      - quantity
+      - unit_price
+      - unit_cost
+
+  inventory_snapshots:
+    required_non_null:
+      - store_id
+      - sku_id
+      - snapshot_timestamp
+      - stock_on_hand
+    non_negative_fields:
+      - stock_on_hand

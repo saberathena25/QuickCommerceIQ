@@ -1,0 +1,84 @@
+{
+  "canonical_cities": {
+    "Bengaluru": {
+      "state": "Karnataka",
+      "store_count": 7,
+      "pincode_prefixes": ["560"],
+      "valid_pincode_regex": "^560\\d{3}$",
+      "zones": [
+        {"zone": "South Bengaluru", "pincodes": ["560034", "560038", "560076", "560011"], "stores": ["Koramangala Hub", "HSR Layout Hub", "JP Nagar Hub"]},
+        {"zone": "East Bengaluru", "pincodes": ["560037", "560066", "560048"], "stores": ["Indiranagar Hub", "Whitefield Hub", "Marathahalli Hub"]},
+        {"zone": "North Bengaluru", "pincodes": ["560024", "560092"], "stores": ["Hebbal Hub"]}
+      ]
+    },
+    "Mumbai": {
+      "state": "Maharashtra",
+      "store_count": 7,
+      "pincode_prefixes": ["400"],
+      "valid_pincode_regex": "^400\\d{3}$",
+      "zones": [
+        {"zone": "Western Suburbs", "pincodes": ["400050", "400053", "400058", "400064"], "stores": ["Bandra West Hub", "Andheri West Hub", "Malad Hub"]},
+        {"zone": "Central Mumbai", "pincodes": ["400013", "400014", "400072"], "stores": ["Lower Parel Hub", "Dadar Hub", "Powai Hub"]},
+        {"zone": "South Mumbai", "pincodes": ["400001", "400005"], "stores": ["Colaba Hub"]}
+      ]
+    },
+    "Delhi NCR": {
+      "state": "Delhi NCR",
+      "store_count": 6,
+      "pincode_prefixes": ["110", "122", "201"],
+      "valid_pincode_regex": "^(110|122|201)\\d{3}$",
+      "zones": [
+        {"zone": "South Delhi", "pincodes": ["110016", "110017", "110024"], "stores": ["Hauz Khas Hub", "Saket Hub"]},
+        {"zone": "Gurugram", "pincodes": ["122001", "122002", "122009"], "stores": ["DLF Phase 3 Hub", "Sohna Road Hub"]},
+        {"zone": "Noida & East Delhi", "pincodes": ["201301", "201304", "110092"], "stores": ["Noida Sec 18 Hub", "Indirapuram Hub"]}
+      ]
+    },
+    "Chennai": {
+      "state": "Tamil Nadu",
+      "store_count": 5,
+      "pincode_prefixes": ["600"],
+      "valid_pincode_regex": "^600\\d{3}$",
+      "zones": [
+        {"zone": "Central Chennai", "pincodes": ["600006", "600017", "600034"], "stores": ["T Nagar Hub", "Nungambakkam Hub"]},
+        {"zone": "South Chennai", "pincodes": ["600020", "600042", "600097"], "stores": ["Adyar Hub", "Velachery Hub"]},
+        {"zone": "North & West Chennai", "pincodes": ["600040", "600102"], "stores": ["Anna Nagar Hub"]}
+      ]
+    }
+  },
+  "city_aliases": {
+    "bangalore": "Bengaluru",
+    "bengaluru": "Bengaluru",
+    "blr": "Bengaluru",
+    "bengalooru": "Bengaluru",
+    "mumbai": "Mumbai",
+    "bombay": "Mumbai",
+    "bom": "Mumbai",
+    "delhi": "Delhi NCR",
+    "new delhi": "Delhi NCR",
+    "delhi ncr": "Delhi NCR",
+    "delhi-ncr": "Delhi NCR",
+    "ncr": "Delhi NCR",
+    "gurgaon": "Delhi NCR",
+    "gurugram": "Delhi NCR",
+    "noida": "Delhi NCR",
+    "chennai": "Chennai",
+    "madras": "Chennai",
+    "maa": "Chennai"
+  },
+  "payment_mode_aliases": {
+    "upi": "UPI",
+    "gpay": "UPI",
+    "phonepe": "UPI",
+    "paytm_upi": "UPI",
+    "bhim": "UPI",
+    "card": "CARD",
+    "credit_card": "CARD",
+    "debit_card": "CARD",
+    "cc": "CARD",
+    "dc": "CARD",
+    "cod": "COD",
+    "cash": "COD",
+    "cash_on_delivery": "COD",
+    "cash on delivery": "COD"
+  }
+}

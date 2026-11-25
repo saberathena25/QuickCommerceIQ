@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "eab2742d6b925638af5d",
+  "position": {
+    "x": 1020,
+    "y": 98,
+    "z": 9,
+    "width": 240,
+    "height": 95,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "analytics_stockout_store_sku_hour"
+                    }
+                  },
+                  "Property": "Estimated Lost GMV (INR)"
+                }
+              },
+              "queryRef": "analytics_stockout_store_sku_hour.Estimated Lost GMV (INR)",
+              "nativeQueryRef": "Estimated Lost GMV (INR)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Peak Lost GMV (INR)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

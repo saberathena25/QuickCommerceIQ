@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "200e7cc51a665be49b3f",
+  "position": {
+    "x": 770,
+    "y": 98,
+    "z": 8,
+    "width": 236,
+    "height": 95,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_orders"
+                    }
+                  },
+                  "Property": "Average Delivery Time (Min)"
+                }
+              },
+              "queryRef": "fact_orders.Average Delivery Time (Min)",
+              "nativeQueryRef": "Average Delivery Time (Min)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Delivery Time (Min)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
